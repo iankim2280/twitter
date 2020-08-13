@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.0.96/css/materialdesignicons.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="list-group" id="leftside">
+          <a href="#" class="list-group-item list-group-item-action">
+            <i class="mdi mdi-home"></i>
+            Home
+          </a>
+          <a href="https://twitter.com/explore" class="list-group-item list-group-item-action">
+            <i class="mdi mdi-pound"></i>
+            Explore
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <i class="mdi mdi-bell-outline"></i>&nbsp;Notifications&nbsp;<span
+              class="badge badge-pill badge-primary">2</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <i class="mdi mdi-email-outline"></i>&nbsp;Messages
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <i class="mdi mdi-bookmark-outline"></i>&nbsp;Bookmarks
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <i class="mdi mdi-format-list-bulleted"></i>&nbsp;Lists
+          </a>
+          <a href="#" class="list-group-item list-group-item-action ">
+            <img class="my_avatar" style="height: 20px; border-radius: 50%" src="" alt="" />&nbsp;Profile
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <i class="mdi mdi-dots-horizontal-circle"></i>&nbsp;More
+          </a>
+        </div>
+      </div>
+      <div class="col-6">
+        <form>
+          <div class="form-group">
+            <h5>Home</h5>
+            <hr />
+            <div class="fb">
+              <img class="my_avatar" id="avatar" src="" alt="" />
+              <div class="fb-column">
+                <textarea placeholder="What's happening?" class="form-control" id="textarea" rows="1"></textarea>
+                <div id="imgGifPoll"></div>
+              </div>
+            </div>
+            <div class="fb">
+              <section>
+                <div id="inserts" class="btn-group mr-2">
+                  <input id="uploadPic" type="file" accept="image/png, image/jpeg, image/gif"
+                    class="btn btn-secondary mdi mdi-image-outline" aria-label="Insert image"></input>
+
+                  <button id="gifbtn" type="button" class="btn btn-secondary mdi mdi-gif" aria-label="Insert gif"
+                    data-toggle="modal" data-target="#insertgif"></button>
+                  <button id="pollbtn" type="button" class="btn btn-secondary mdi mdi-poll" aria-label="Insert Poll"
+                    style=""></button>
+                  <button id="emojibtn" type="button" class="btn btn-secondary mdi mdi-emoticon-happy-outline"
+                    aria-label="Insert emoji" data-toggle="modal" data-target="#emojimodal"></button>
+                </div>
+              </section>
+              <button id="tweet" class="btn btn-primary" type="submit">
+                Tweet
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Modal -->
+        <div class="modal fade" id="insertgif" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+
+                <form class="container" id="formsearchgif">
+                  <div class="row">
+                    <div class="col sm-1">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="col sm-9">
+
+
+                      <input type="text" id="searchGif" style="width: 270px" placeholder="Search for GIFs">
+
+                    </div>
+                    <div class="col sm-2">
+                      <button type="button" class="btn btn-primary btn-sm" id="searchGifBtn">Search</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-body">
+                <div id="switchgifsarea" class="hide">
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switchGif">
+                    <label class="custom-control-label" for="switchGif">Toggle this switch element</label>
+                  </div>
+
+                  <hr>
+                </div>
+                <div id="browsegifs">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- END MODAL-->
+
+        <!-- Small modal -->
+        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+          aria-hidden="true" id="emojimodal">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <input type="text" id="searchEmoji" style="width: 270px" placeholder="Search emojis">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-header">
+                <div class="btn-group mr-2 emojimenu" id="emojiCategories">
+                  <img src="https://abs-0.twimg.com/emoji/v2/svg/1f600.svg" alt="" data-category="Smileys">
+                  <img src="https://abs-0.twimg.com/emoji/v2/svg/1f43b.svg" alt="" data-category="Animals">
+                  <img src="https://abs-0.twimg.com/emoji/v2/svg/1f354.svg" alt="" data-category="Food">
+                  <img src="https://abs-0.twimg.com/emoji/v2/svg/26bd.svg" alt="" data-category="Activities">
+                  <img src="https://abs-0.twimg.com/emoji/v2/svg/1f698.svg" alt="" data-category="Travel">
+                  <img src="https://abs-0.twimg.com/emoji/v2/svg/1f4a1.svg" alt="" data-category="Objects">
+                  <img src="https://abs-0.twimg.com/emoji/v2/svg/1f523.svg" alt="" data-category="Symbols">
+                  <img src="https://abs-0.twimg.com/emoji/v2/svg/1f6a9.svg" alt="" data-category="Flags">
+                </div>
+              </div>
+              <div class="modal-body" id="emojimodalbody">
+              </div>
+              <div class="modal-footer">
+              </div>
+            </div>
+          </div>
+        </div><!-- END MODAL -->
+
+        <main></main>
+      </div>
+      <div class="col">
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default"><i class="mdi mdi-magnify"></i></span>
+          </div>
+          <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+            placeholder="Search Twitter" />
+        </div>
+
+        <div class="card text-center">
+          <div class="card-header">
+            <h5 class="card-title">Trends for you</h5>
+          </div>
+          <div class="card-footer text-muted">
+            Show more
+          </div>
+        </div>
+        <br />
+        <div class="card text-center">
+          <div class="card-header">
+            <h5 class="card-title">Who to follow</h5>
+          </div>
+          <div class="card-footer text-muted">
+            Show more
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
