@@ -1,4 +1,4 @@
-# Assignment1
+# Twitter Clone
 
 ## Complete a twitter page with some codes from exercises and labs we've covered.
 
